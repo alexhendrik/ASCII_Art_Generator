@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace ASCII_Art_Generator
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Enter file path:");
+
+            var path = Console.ReadLine();
+
+            var processor = new BitmapProcessor();
+
+            Console.WriteLine(processor.GetAsciiString(new Bitmap(path)));
         }
     }
 }
